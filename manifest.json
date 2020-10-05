@@ -1,0 +1,19 @@
+{
+   "content_scripts": [ {
+      "css": [ "main.css" ],
+      "js": [ "main.js" ],
+      "matches": [ "https://mail.google.com/*" ]
+   } ],
+   "description": "Make gmail send button safer and reduce accidental sends and data leakage.",
+   "homepage_url": "https://github.com/AvnerCohen/safe-send-gmail",
+   "icons": {
+      "128": "logo.png",
+      "16": "logo.png"
+   },
+   "manifest_version": 2,
+   "name": "Safer Send Button",
+   "permissions": [  ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.3",
+   "web_accessible_resources": [ "lib/*", "content.js" ]
+}
