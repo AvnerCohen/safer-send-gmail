@@ -68,7 +68,7 @@ gmail.observe.on("recipient_change", function (match, recipients) {
   }
   if (bcc) {
     for (let i = 0; i < bcc.length; i++) {
-      allEmails(getEmailName(bcc[i]))
+      allEmails.push(getEmailName(bcc[i]))
     }
   }
   for (let item of allEmails) {
