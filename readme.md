@@ -1,4 +1,6 @@
-# Safe Send Email Chrome Extension
+# Safe Send Email - Chrome Extension
+
+![Safe Send Email](logo.png)
 
 This extension is designed to assist is making less mistakes when working in gmail for business.
 
@@ -15,6 +17,7 @@ The implementation is based on the gmail JavaScript client - [gmail.js](https://
 
 [Chrome Store
 ](https://chrome.google.com/webstore/detail/safer-send-button/megjllekamffilchcicgdgmfeimicebh)
+
 ## The Solution
 
 The send button will be updated to include an emoji inticating one of the three cases:
