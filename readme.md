@@ -2,16 +2,18 @@
 
 ![Safe Send Email](logo.png)
 
-This extension is designed to assist is making less mistakes when working in gmail for business.
+Reduce accidental sends and data leakage with the "Safe Send" button for Gmail.
+This extension is designed to alert the sender when an email is drafted, by showing dynamic emojis when working in Gmail for Business.
 
 
 
-Common such mistakes includes:
+Avoid common mistakes such as: 
 
-* Unknowingly sending mail outside of your domain (gmail will only warn if the user does not already present in your contacts).
-* Mixing up mails to multiple contacts from multiple companies.
+1. Unknowingly sending an email outside of your domain or organization (Gmail will only warn if the recipient is not already in your contacts, which most of us don't remember to use)
+2. Mixing up mails to multiple contacts from multiple companies - avoid that 'Oops, I cc'd the wrong Tony'
 
 The implementation is based on the gmail JavaScript client - [gmail.js](https://github.com/KartikTalwar/gmail.js) 
+
 
 ## Installation
 
