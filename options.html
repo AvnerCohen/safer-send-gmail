@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>safer-send-gmail Options</title>
+  <meta charset="utf-8" />
+</head>
+<style type="text/css">
+  h1 {
+    font-size: 14px;
+  }
+  .margin {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .padded-left {
+    padding-left: 25px;
+  }
+</style>
+<body>
+
+<h1>Options</h1>
+
+<div class="margin">
+  <input type="checkbox" id="randomize">
+  <label for="randomize">
+    Randomize Emoji in Send button
+  </label>
+  <p class="padded-left">
+    When toggled, show a random emoji instead of a fixed one.<br>
+    The following emojis will be used:
+    <ul>
+      <li>
+        Same domain: ✅, 💫
+      </li>
+      <li>
+        External domains: ⚠️, 👀, ❓, 🚩
+      </li>
+      <li>
+        Multiple domains: 🛑, 💣, 👹, 💀
+      </li>
+    </ul>
+  </p>
+</div>
+
+<div id="status" class="margin"></div>
+
+<div class="margin">
+  <button id="save">Save</button>
+</div>
+
+<script src="options.js"></script>
+</body>
+</html>

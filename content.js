@@ -1,6 +1,20 @@
 let gmail = Gmail()
 let thisUserDomain = safeGetDomain(gmail.get.user_email())
 
+// default options
+let options = {
+  randomize: true,
+}
+
+window.addEventListener("message", (evt) => {
+  if (evt.data.type === undefined) { return }
+  if (evt.data.type != "saferSendGmailOptions") { return }
+  options = evt.data;
+})
+
+// ask for options from main script
+window.postMessage({ type: "getSaferSendGmailOptions" }, "*")
+
 let STATE = {
   SAME_DOMAIN: 0,
   SINGLE_EXTERNAL_DOMAIN: 1,
@@ -82,14 +96,14 @@ gmail.observe.on("recipient_change", function (match, recipients) {
   let text = "Send "
   let title = "";
   if (domainsCount === 0) {
-    text += randomizeEmoji(STATE.SAME_DOMAIN)
+    text += showEmoji(STATE.SAME_DOMAIN)
     title = "Recipients from current organization only."
   } else if (domainsCount == 1) {
       title = "External recipients found."
-      text += `${randomizeEmoji(STATE.SINGLE_EXTERNAL_DOMAIN)} (${maxListAsString(externalDomains)})`
+      text += `${showEmoji(STATE.SINGLE_EXTERNAL_DOMAIN)} (${maxListAsString(externalDomains)})`
   } else {
       title = `Multiple external recipients domains detected: ${maxListAsString(externalDomains)}!`
-      text += `${randomizeEmoji(STATE.MULTI_EXTERNAL_DOMAINS)} (${maxListAsString(externalDomains)})`
+      text += `${showEmoji(STATE.MULTI_EXTERNAL_DOMAINS)} (${maxListAsString(externalDomains)})`
   }
   sendButton.text(text);
   sendButton.title = title;
@@ -127,14 +141,18 @@ function maxListAsString(domainsObj){
 
 }
 
-function randomizeEmoji(state) {
+function showEmoji(state) {
   let array = []
   if (state === STATE.SAME_DOMAIN){
-    array = ['💫', '✅'];
+    array = ['✅', '💫'];
   } else if (state === STATE.SINGLE_EXTERNAL_DOMAIN) {
-    array = ['👀', '❓', '🚩', '⚠️']
+    array = ['⚠️', '👀', '❓', '🚩']
   } else if ( state === STATE.MULTI_EXTERNAL_DOMAINS) {
-    array = ['👹', '💀', '💣']
+    array = ['🛑', '💣', '👹', '💀']
   }
-  return array[Math.floor(Math.random() * array.length)];
+  if (options.randomize) {
+    return array[Math.floor(Math.random() * array.length)];
+  } else {
+    return array[0];
+  }
 }
