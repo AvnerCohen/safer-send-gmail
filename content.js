@@ -1,6 +1,19 @@
 let gmail = Gmail()
 let thisUserDomain = safeGetDomain(gmail.get.user_email())
 
+// default options
+let options = { warn: false }
+
+window.addEventListener("message", (evt) => {
+  if (evt.data.type === undefined) { return }
+  if (evt.data.type != "saferSendGmailOptions") { return }
+  console.log("safer-send-gmail options set: " + JSON.stringify(options))
+  options = evt.options
+})
+
+// ask for options from main script
+window.postMessage({ type: "getSaferSendGmailOptions" }, "*")
+
 let STATE = {
   SAME_DOMAIN: 0,
   SINGLE_EXTERNAL_DOMAIN: 1,

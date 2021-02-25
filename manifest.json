@@ -12,8 +12,12 @@
    },
    "manifest_version": 2,
    "name": "Safer Send Button",
-   "permissions": [  ],
+   "permissions": [ "storage" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
    "version": "1.0.7",
-   "web_accessible_resources": [ "lib/*", "content.js" ]
+   "web_accessible_resources": [ "lib/*", "content.js" ],
+   "options_ui": {
+      "page": "options.html",
+      "open_in_tab": false
+   }
 }
