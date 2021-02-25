@@ -26,15 +26,21 @@ The send button will be updated to include an emoji inticating one of the three 
 
 1. All recipients are from the current domain.
 
-![All from current domain](same_domain2.png)
+![All from current domain](images/same-domain.png)
 
 2. Recipients includes external domains.
 
-![Recipients includes external domains](external_domain2.png)
+![Recipients includes external domains](images/external-domain.png)
 
 3. Recipients includes multiple external domains
 
-![Recipients includes multiple external domains](multi_external_domain2.png)
+![Recipients includes multiple external domains](images/multiple-domains.png)
+
+## Options
+
+The extension offers the following options:
+
+* Randomize: If checked, the displayed emoji will be randomized to increase user attention (default: false)
 
 ## Activation
 
