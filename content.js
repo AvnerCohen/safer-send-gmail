@@ -3,7 +3,7 @@ let thisUserDomain = safeGetDomain(gmail.get.user_email())
 
 // default options
 let options = {
-  randomize: true,
+  randomize: false,
 }
 
 window.addEventListener("message", (evt) => {
