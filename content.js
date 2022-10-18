@@ -128,7 +128,10 @@ function getEmailName(resp) {
 }
 
 function safeGetDomain(email){
-  return email.split("@")[1] || "?";
+  if (email) {
+    return email.split("@")[1] || "?";
+  }
+  return "?"
 }
 
 function maxListAsString(domainsObj){

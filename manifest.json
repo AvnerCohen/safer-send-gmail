@@ -1,7 +1,7 @@
 {
    "content_scripts": [ {
       "css": [ "main.css" ],
-      "js": [ "main.js" ],
+      "js": [ "main.js", "lib/jquery-3.6.1.min.js", "lib/gmail.js", "content.js"],
       "matches": [ "https://mail.google.com/*" ]
    } ],
    "description": "Make gmail send button safer and reduce accidental sends and data leakage.",
@@ -10,12 +10,15 @@
       "128": "logo.png",
       "16": "logo.png"
    },
-   "manifest_version": 2,
+   "manifest_version": 3,
    "name": "Safer Send Button",
    "permissions": [ "storage" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "2.0.1",
-   "web_accessible_resources": [ "lib/*", "content.js" ],
+   "version": "3.0.1",
+   "web_accessible_resources": [{
+    "resources": ["lib/gmail.js", "lib/jquery-3.6.1.min.js", "content.js"],
+    "matches": ["http://*/*", "https://*/*"]
+   }],
    "options_ui": {
       "page": "options.html",
       "open_in_tab": false
