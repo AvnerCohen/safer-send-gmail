@@ -1,5 +1,4 @@
 let gmail = Gmail()
-let thisUserDomain = safeGetDomain(gmail.get.user_email())
 
 // default options
 let options = {
@@ -62,10 +61,15 @@ setInterval(function () {
   
 }, 1500)
 
+function altFindCurrentAddress() {
+  var email = document.getElementsByClassName("gb_de")[0].childNodes[2].innerText
+  return email;
+}
 gmail.observe.on("recipient_change", function (match, recipients) {
   let to = recipients.to,
     cc = recipients.cc,
     bcc = recipients.bcc
+  let thisUserDomain = safeGetDomain(altFindCurrentAddress())
   let sendButton = match.dom('send_button').first()
   let names = "",
     externalDomains = {},
