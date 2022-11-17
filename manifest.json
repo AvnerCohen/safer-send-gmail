@@ -14,7 +14,7 @@
    "name": "Safer Send Button",
    "permissions": [ "storage" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "3.0.2",
+   "version": "3.0.3",
    "web_accessible_resources": [{
     "resources": ["lib/gmail.js", "lib/jquery-3.6.1.min.js", "content.js"],
     "matches": ["http://*/*", "https://*/*"]

@@ -62,7 +62,8 @@ setInterval(function () {
 }, 1500)
 
 function altFindCurrentAddress() {
-  var email = document.getElementsByClassName("gb_de")[0].childNodes[2].innerText
+  let mainObj = Array.from(document.querySelectorAll('div')).find(el => el.textContent === 'Google Account');
+  var email = mainObj ? mainObj.parentNode.childNodes[2].innerText : 'N/A';
   return email;
 }
 gmail.observe.on("recipient_change", function (match, recipients) {
